@@ -1,0 +1,16 @@
+C:\Users\Joshua\source\repos\BertBorschTutorial\BertBorschTutorial\BertBorschTutorial\bin\Debug\BertBorschTutorial.dll
+C:\Users\Joshua\source\repos\BertBorschTutorial\BertBorschTutorial\BertBorschTutorial\bin\Debug\BertBorschTutorial.pdb
+C:\Users\Joshua\source\repos\BertBorschTutorial\BertBorschTutorial\BertBorschTutorial\bin\Debug\Xamarin.Forms.Core.dll
+C:\Users\Joshua\source\repos\BertBorschTutorial\BertBorschTutorial\BertBorschTutorial\bin\Debug\Xamarin.Forms.Platform.dll
+C:\Users\Joshua\source\repos\BertBorschTutorial\BertBorschTutorial\BertBorschTutorial\bin\Debug\Xamarin.Forms.Xaml.dll
+C:\Users\Joshua\source\repos\BertBorschTutorial\BertBorschTutorial\BertBorschTutorial\bin\Debug\Xamarin.Forms.Core.pdb
+C:\Users\Joshua\source\repos\BertBorschTutorial\BertBorschTutorial\BertBorschTutorial\bin\Debug\Xamarin.Forms.Core.xml
+C:\Users\Joshua\source\repos\BertBorschTutorial\BertBorschTutorial\BertBorschTutorial\bin\Debug\Xamarin.Forms.Xaml.pdb
+C:\Users\Joshua\source\repos\BertBorschTutorial\BertBorschTutorial\BertBorschTutorial\bin\Debug\Xamarin.Forms.Xaml.xml
+C:\Users\Joshua\source\repos\BertBorschTutorial\BertBorschTutorial\BertBorschTutorial\obj\Debug\BertBorschTutorial.csprojResolveAssemblyReference.cache
+C:\Users\Joshua\source\repos\BertBorschTutorial\BertBorschTutorial\BertBorschTutorial\obj\Debug\BertBorschTutorial.csproj.CoreCompileInputs.cache
+C:\Users\Joshua\source\repos\BertBorschTutorial\BertBorschTutorial\BertBorschTutorial\obj\Debug\BertBorschTutorial.MainPage.xaml.g.cs
+C:\Users\Joshua\source\repos\BertBorschTutorial\BertBorschTutorial\BertBorschTutorial\obj\Debug\BertBorschTutorial.App.xaml.g.cs
+C:\Users\Joshua\source\repos\BertBorschTutorial\BertBorschTutorial\BertBorschTutorial\obj\Debug\BertBorschTutorial.dll
+C:\Users\Joshua\source\repos\BertBorschTutorial\BertBorschTutorial\BertBorschTutorial\obj\Debug\BertBorschTutorial.pdb
+C:\Users\Joshua\source\repos\BertBorschTutorial\BertBorschTutorial\BertBorschTutorial\obj\Debug\BertBorschTutorial.Views.LoginPage.xaml.g.cs

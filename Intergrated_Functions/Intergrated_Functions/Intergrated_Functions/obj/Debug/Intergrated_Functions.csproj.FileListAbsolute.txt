@@ -1,0 +1,17 @@
+C:\Users\Joshua\source\repos\Intergrated_Functions\Intergrated_Functions\Intergrated_Functions\obj\Debug\Intergrated_Functions.csprojResolveAssemblyReference.cache
+C:\Users\Joshua\source\repos\Intergrated_Functions\Intergrated_Functions\Intergrated_Functions\obj\Debug\Intergrated_Functions.csproj.CoreCompileInputs.cache
+C:\Users\Joshua\source\repos\Intergrated_Functions\Intergrated_Functions\Intergrated_Functions\obj\Debug\Intergrated_Functions.MainPage.xaml.g.cs
+C:\Users\Joshua\source\repos\Intergrated_Functions\Intergrated_Functions\Intergrated_Functions\obj\Debug\Intergrated_Functions.App.xaml.g.cs
+C:\Users\Joshua\source\repos\Intergrated_Functions\Intergrated_Functions\Intergrated_Functions\obj\Debug\Intergrated_Functions.Calculations.xaml.g.cs
+C:\Users\Joshua\source\repos\Intergrated_Functions\Intergrated_Functions\Intergrated_Functions\bin\Debug\Intergrated_Functions.dll
+C:\Users\Joshua\source\repos\Intergrated_Functions\Intergrated_Functions\Intergrated_Functions\bin\Debug\Intergrated_Functions.pdb
+C:\Users\Joshua\source\repos\Intergrated_Functions\Intergrated_Functions\Intergrated_Functions\bin\Debug\Xamarin.Forms.Core.dll
+C:\Users\Joshua\source\repos\Intergrated_Functions\Intergrated_Functions\Intergrated_Functions\bin\Debug\Xamarin.Forms.Platform.dll
+C:\Users\Joshua\source\repos\Intergrated_Functions\Intergrated_Functions\Intergrated_Functions\bin\Debug\Xamarin.Forms.Xaml.dll
+C:\Users\Joshua\source\repos\Intergrated_Functions\Intergrated_Functions\Intergrated_Functions\bin\Debug\Xamarin.Forms.Core.pdb
+C:\Users\Joshua\source\repos\Intergrated_Functions\Intergrated_Functions\Intergrated_Functions\bin\Debug\Xamarin.Forms.Core.xml
+C:\Users\Joshua\source\repos\Intergrated_Functions\Intergrated_Functions\Intergrated_Functions\bin\Debug\Xamarin.Forms.Platform.pdb
+C:\Users\Joshua\source\repos\Intergrated_Functions\Intergrated_Functions\Intergrated_Functions\bin\Debug\Xamarin.Forms.Xaml.pdb
+C:\Users\Joshua\source\repos\Intergrated_Functions\Intergrated_Functions\Intergrated_Functions\bin\Debug\Xamarin.Forms.Xaml.xml
+C:\Users\Joshua\source\repos\Intergrated_Functions\Intergrated_Functions\Intergrated_Functions\obj\Debug\Intergrated_Functions.dll
+C:\Users\Joshua\source\repos\Intergrated_Functions\Intergrated_Functions\Intergrated_Functions\obj\Debug\Intergrated_Functions.pdb

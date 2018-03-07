@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Intergrated_Functions.Calculations">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Calculate Plasma Dilution" 
+           VerticalOptions="Center" 
+           HorizontalOptions="Center" />
+            <Label x:Name="Output" Text="Insert Values" BackgroundColor="Aqua"/>
+
+
+            <Entry x:Name="Input1" Placeholder="Donor Weight" />
+            <Entry x:Name="Input2" Placeholder="Blood Trans. in 48 hours" />
+            <Entry x:Name="Input3" Placeholder="Colloids Trans. in 48 hours" />
+            <Entry x:Name="Input4" Placeholder="Crystalloids Trans. in last hour" />
+            <Button x:FieldModifier="CalculateButton" Text="Calculate" Clicked="Button_Clicked" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
