@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CalculatorTest.Calculator">
+
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Spacing="0" Padding="0">
+                
+                <Label Text="Calculate Plasma Dilution" 
+                       VerticalOptions="Center" 
+                       HorizontalOptions="Center" />
+                <Label x:Name="Output" 
+                   Text="Insert Values" 
+                   BackgroundColor="Aqua"/>
+                <Label Text="Donor Weight"/>
+                <Entry x:Name="WeightInput" 
+                   Placeholder="In KG"/>
+
+                <Label Text="Blood Trans. in 48 hours" 
+                   />
+                <Entry x:Name="BloodInput" 
+                   Placeholder="In mls" 
+                  />
+
+                <Label Text="Colloids Trans. in last 48 hours" 
+                   />
+                <Entry x:Name="ColloidInput" 
+                   Placeholder="In mls" 
+                  />
+
+                <Label Text="Crystalloids Trans. in last hour" 
+                  />
+                <Entry x:Name="CrystalInput" 
+                   Placeholder="In mls" 
+                  />
+
+                <Button x:FieldModifier="CalculateButton" 
+                    Text="Calculate" 
+                    Clicked="Button_Clicked"  
+                />
+                <Button
+                    Text="Return to Main"
+                    Clicked="ReturnToMain"/>
+
+
+            </StackLayout>
+
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
