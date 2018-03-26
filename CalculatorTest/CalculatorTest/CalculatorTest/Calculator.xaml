@@ -6,13 +6,15 @@
 
     <ContentPage.Content>
         <ScrollView>
-            <StackLayout x:Name="Testing">
+            <StackLayout x:Name="Testing" Margin="10">
                 <Label Text="Calculate Plasma Dilution" 
                        VerticalOptions="Center" 
                        HorizontalOptions="Center"
-                       FontSize="Large"/>
+                       FontSize="Large"
+                       FontAttributes="Bold"/>
 
-                <Label Text="Donor Weight:"/>
+                <Label></Label>
+                <Label Text="Donor Weight:" FontSize="Medium" FontAttributes="Bold"/>
                 <Entry x:Name="DonorWeight" Text="1"
                    Placeholder="In KG">
                     <Entry.Behaviors>
@@ -20,22 +22,23 @@
                     </Entry.Behaviors>
                 </Entry>
 
-                <Label Text="Blood Transfused in last the 48 hours"/>
-                <Label Text="Whole Blood:"/>
+                <Label></Label>
+                <Label Text="Blood Transfused in last the 48 hours" FontSize="Medium" FontAttributes="Bold"/>
+                <Label Text="Whole Blood:" FontAttributes="Italic"/>
                 <Entry x:Name="WholeBlood" Text="1"
                    Placeholder="In mls">
                     <Entry.Behaviors>
                         <local:EntryValidateBehaviour/>
                     </Entry.Behaviors>
                 </Entry>
-                <Label Text="Packed Cells:"/>
+                <Label Text="Packed Cells:" FontAttributes="Italic"/>
                 <Entry x:Name="PackedCells" Text="1"
                    Placeholder="In mls">
                     <Entry.Behaviors>
                         <local:EntryValidateBehaviour/>
                     </Entry.Behaviors>
                 </Entry>
-                <Label Text="OtherBloodProducts:"/>
+                <Label Text="Other Blood Products:" FontAttributes="Italic"/>
                 <Entry x:Name="OtherBloodProducts" Text="1"
                    Placeholder="In mls">
                     <Entry.Behaviors>
@@ -43,57 +46,58 @@
                     </Entry.Behaviors>
                 </Entry>
 
-                <Label Text="Colloids Transfused in last the 48 hours"/>
-                <Label Text="FFP / Plasma:"/>
+                <Label></Label>
+                <Label Text="Colloids Transfused in last the 48 hours" FontSize="Medium" FontAttributes="Bold"/>
+                <Label Text="FFP / Plasma:" FontAttributes="Italic"/>
                 <Entry x:Name="FPPPlasma" Text="1"
                    Placeholder="In mls">
                     <Entry.Behaviors>
                         <local:EntryValidateBehaviour/>
                     </Entry.Behaviors>
                 </Entry>
-                <Label Text="Platelets:"/>
+                <Label Text="Platelets:" FontAttributes="Italic"/>
                 <Entry x:Name="Platelets" Text="1"
                    Placeholder="In mls">
                     <Entry.Behaviors>
                         <local:EntryValidateBehaviour/>
                     </Entry.Behaviors>
                 </Entry>
-                <Label Text="Cryoprecipitate:"/>
+                <Label Text="Cryoprecipitate:" FontAttributes="Italic"/>
                 <Entry x:Name="Cryoprecipitate" Text="1"
                    Placeholder="In mls">
                     <Entry.Behaviors>
                         <local:EntryValidateBehaviour/>
                     </Entry.Behaviors>
                 </Entry>
-                <Label Text="Albumin 4%:"/>
+                <Label Text="Albumin 4%:" FontAttributes="Italic"/>
                 <Entry x:Name="Albumin4" Text="1"
                    Placeholder="In mls">
                     <Entry.Behaviors>
                         <local:EntryValidateBehaviour/>
                     </Entry.Behaviors>
                 </Entry>
-                <Label Text="Albumin 5%:"/>
+                <Label Text="Albumin 5%:" FontAttributes="Italic"/>
                 <Entry x:Name="Albumin5" Text="1"
                    Placeholder="In mls">
                     <Entry.Behaviors>
                         <local:EntryValidateBehaviour/>
                     </Entry.Behaviors>
                 </Entry>
-                <Label Text="Albumin 20%:"/>
+                <Label Text="Albumin 20%:" FontAttributes="Italic"/>
                 <Entry x:Name="Albumin20" Text="1"
                    Placeholder="In mls">
                     <Entry.Behaviors>
                         <local:EntryValidateBehaviour/>
                     </Entry.Behaviors>
                 </Entry>
-                <Label Text="Dextran:"/>
+                <Label Text="Dextran:" FontAttributes="Italic"/>
                 <Entry x:Name="Dextran" Text="1"
                    Placeholder="In mls">
                     <Entry.Behaviors>
                         <local:EntryValidateBehaviour/>
                     </Entry.Behaviors>
                 </Entry>
-                <Label Text="Other Colloids:"/>
+                <Label Text="Other Colloids:" FontAttributes="Italic"/>
                 <Entry x:Name="OtherColloids" Text="1"
                    Placeholder="In mls">
                     <Entry.Behaviors>
@@ -101,36 +105,37 @@
                     </Entry.Behaviors>
                 </Entry>
 
-                <Label Text="Crystalloids Transfused in the last hour"/>
-                <Label Text="0.9% NaCl:"/>
+                <Label></Label>
+                <Label Text="Crystalloids Transfused in the last hour" FontSize="Medium" FontAttributes="Bold"/>
+                <Label Text="0.9% NaCl:" FontAttributes="Italic"/>
                 <Entry x:Name="NaCl" Text="1"
                    Placeholder="In mls">
                     <Entry.Behaviors>
                         <local:EntryValidateBehaviour/>
                     </Entry.Behaviors>
                 </Entry>
-                <Label Text="0.45 NS:"/>
+                <Label Text="0.45 NS:" FontAttributes="Italic"/>
                 <Entry x:Name="NS" Text="1"
                    Placeholder="In mls">
                     <Entry.Behaviors>
                         <local:EntryValidateBehaviour/>
                     </Entry.Behaviors>
                 </Entry>
-                <Label Text="Hartmann's Solution:"/>
+                <Label Text="Hartmann's Solution:" FontAttributes="Italic"/>
                 <Entry x:Name="HartmannsSolution" Text="1"
                    Placeholder="In mls">
                     <Entry.Behaviors>
                         <local:EntryValidateBehaviour/>
                     </Entry.Behaviors>
                 </Entry>
-                <Label Text="4% Dextrose and 1/5:"/>
+                <Label Text="4% Dextrose and 1/5:" FontAttributes="Italic"/>
                 <Entry x:Name="Dextrose" Text="1"
                    Placeholder="In mls">
                     <Entry.Behaviors>
                         <local:EntryValidateBehaviour/>
                     </Entry.Behaviors>
                 </Entry>
-                <Label Text="Other Crystaloids:"/>
+                <Label Text="Other Crystaloids:" FontAttributes="Italic"/>
                 <Entry x:Name="OtherCrystalloids" Text="1"
                    Placeholder="In mls">
                     <Entry.Behaviors>

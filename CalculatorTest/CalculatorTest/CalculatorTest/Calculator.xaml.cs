@@ -41,7 +41,8 @@ namespace CalculatorTest
                 double.Parse(Dextrose.Text) +
                 double.Parse(OtherCrystalloids.Text);
 
-            if (ColloidsDouble + CrystalDouble<TPV && BloodDouble + ColloidsDouble + CrystalDouble<TBV)
+            if (ColloidsDouble + CrystalDouble < TPV && 
+                BloodDouble + ColloidsDouble + CrystalDouble < TBV)
             {
                 Output.Text = "Sample qualifies.";
                 Output.BackgroundColor = Color.Aqua;
