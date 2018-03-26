@@ -1,51 +1,155 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:CalculatorTest"
              x:Class="CalculatorTest.Calculator">
 
     <ContentPage.Content>
         <ScrollView>
-            <StackLayout Spacing="0" Padding="0">
-                
+            <StackLayout x:Name="Testing">
                 <Label Text="Calculate Plasma Dilution" 
                        VerticalOptions="Center" 
                        HorizontalOptions="Center" />
+
+                <Label Text="Donor Weight:"/>
+                <Entry x:Name="DonorWeight" 
+                   Placeholder="In KG">
+                    <Entry.Behaviors>
+                        <local:EntryValidateBehaviour/>
+                    </Entry.Behaviors>
+                </Entry>
+
+                <Label Text="Blood Transfused in last the 48 hours"/>
+                <Label Text="Whole Blood:"/>
+                <Entry x:Name="WholeBlood" 
+                   Placeholder="In mls">
+                    <Entry.Behaviors>
+                        <local:EntryValidateBehaviour/>
+                    </Entry.Behaviors>
+                </Entry>
+                <Label Text="Packed Cells:"/>
+                <Entry x:Name="PackedCells" 
+                   Placeholder="In mls">
+                    <Entry.Behaviors>
+                        <local:EntryValidateBehaviour/>
+                    </Entry.Behaviors>
+                </Entry>
+                <Label Text="OtherBloodProducts:"/>
+                <Entry x:Name="OtherBloodProducts" 
+                   Placeholder="In mls">
+                    <Entry.Behaviors>
+                        <local:EntryValidateBehaviour/>
+                    </Entry.Behaviors>
+                </Entry>
+
+                <Label Text="Colloids Transfused in last the 48 hours"/>
+                <Label Text="FFP / Plasma:"/>
+                <Entry x:Name="FPPPlasma" 
+                   Placeholder="In mls">
+                    <Entry.Behaviors>
+                        <local:EntryValidateBehaviour/>
+                    </Entry.Behaviors>
+                </Entry>
+                <Label Text="Platelets:"/>
+                <Entry x:Name="Platelets" 
+                   Placeholder="In mls">
+                    <Entry.Behaviors>
+                        <local:EntryValidateBehaviour/>
+                    </Entry.Behaviors>
+                </Entry>
+                <Label Text="Cryoprecipitate:"/>
+                <Entry x:Name="Cryoprecipitate" 
+                   Placeholder="In mls">
+                    <Entry.Behaviors>
+                        <local:EntryValidateBehaviour/>
+                    </Entry.Behaviors>
+                </Entry>
+                <Label Text="Albumin 4%:"/>
+                <Entry x:Name="Albumin4" 
+                   Placeholder="In mls">
+                    <Entry.Behaviors>
+                        <local:EntryValidateBehaviour/>
+                    </Entry.Behaviors>
+                </Entry>
+                <Label Text="Albumin 5%:"/>
+                <Entry x:Name="Albumin5" 
+                   Placeholder="In mls">
+                    <Entry.Behaviors>
+                        <local:EntryValidateBehaviour/>
+                    </Entry.Behaviors>
+                </Entry>
+                <Label Text="Albumin 20%:"/>
+                <Entry x:Name="Albumin20" 
+                   Placeholder="In mls">
+                    <Entry.Behaviors>
+                        <local:EntryValidateBehaviour/>
+                    </Entry.Behaviors>
+                </Entry>
+                <Label Text="Dextran:"/>
+                <Entry x:Name="Dextran" 
+                   Placeholder="In mls">
+                    <Entry.Behaviors>
+                        <local:EntryValidateBehaviour/>
+                    </Entry.Behaviors>
+                </Entry>
+                <Label Text="Other Colloids:"/>
+                <Entry x:Name="OtherColloids" 
+                   Placeholder="In mls">
+                    <Entry.Behaviors>
+                        <local:EntryValidateBehaviour/>
+                    </Entry.Behaviors>
+                </Entry>
+
+                <Label Text="Crystalloids Transfused in the last hour"/>
+                <Label Text="0.9% NaCl:"/>
+                <Entry x:Name="NaCl" 
+                   Placeholder="In mls">
+                    <Entry.Behaviors>
+                        <local:EntryValidateBehaviour/>
+                    </Entry.Behaviors>
+                </Entry>
+                <Label Text="0.45 NS:"/>
+                <Entry x:Name="NS" 
+                   Placeholder="In mls">
+                    <Entry.Behaviors>
+                        <local:EntryValidateBehaviour/>
+                    </Entry.Behaviors>
+                </Entry>
+                <Label Text="Hartmann's Solution:"/>
+                <Entry x:Name="HartmannsSolution" 
+                   Placeholder="In mls">
+                    <Entry.Behaviors>
+                        <local:EntryValidateBehaviour/>
+                    </Entry.Behaviors>
+                </Entry>
+                <Label Text="4% Dextrose and 1/5:"/>
+                <Entry x:Name="Dextrose" 
+                   Placeholder="In mls">
+                    <Entry.Behaviors>
+                        <local:EntryValidateBehaviour/>
+                    </Entry.Behaviors>
+                </Entry>
+                <Label Text="Other Crystaloids:"/>
+                <Entry x:Name="OtherCrystalloids" 
+                   Placeholder="In mls">
+                    <Entry.Behaviors>
+                        <local:EntryValidateBehaviour/>
+                    </Entry.Behaviors>
+                </Entry>
+
                 <Label x:Name="Output" 
-                   Text="Insert Values" 
+                   Text="" 
                    BackgroundColor="Aqua"/>
-                <Label Text="Donor Weight"/>
-                <Entry x:Name="WeightInput" 
-                   Placeholder="In KG"/>
 
-                <Label Text="Blood Trans. in 48 hours" 
-                   />
-                <Entry x:Name="BloodInput" 
-                   Placeholder="In mls" 
-                  />
-
-                <Label Text="Colloids Trans. in last 48 hours" 
-                   />
-                <Entry x:Name="ColloidInput" 
-                   Placeholder="In mls" 
-                  />
-
-                <Label Text="Crystalloids Trans. in last hour" 
-                  />
-                <Entry x:Name="CrystalInput" 
-                   Placeholder="In mls" 
-                  />
-
+                <!--Buttons-->
                 <Button x:FieldModifier="CalculateButton" 
                     Text="Calculate" 
-                    Clicked="Button_Clicked"  
-                />
+                    Clicked="Button_Clicked"/>
                 <Button
                     Text="Return to Main"
                     Clicked="ReturnToMain"/>
 
-
             </StackLayout>
-
         </ScrollView>
     </ContentPage.Content>
 </ContentPage>
