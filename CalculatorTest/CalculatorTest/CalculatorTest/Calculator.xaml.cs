@@ -17,14 +17,15 @@ namespace CalculatorTest
 			InitializeComponent ();
         }
         private void Button_Clicked(object sender, EventArgs e) {
-            double WeightDouble = double.Parse(DonorWeight.Text);
 
+            double WeightDouble = double.Parse(DonorWeight.Text);
             double TPV = WeightDouble / 0.025;
             double TBV = WeightDouble / 0.015;
 
             double BloodDouble = double.Parse(WholeBlood.Text) +
                 double.Parse(PackedCells.Text) +
                 double.Parse(OtherBloodProducts.Text);
+
             double ColloidsDouble = double.Parse(FPPPlasma.Text) +
                 double.Parse(Platelets.Text) +
                 double.Parse(Cryoprecipitate.Text) +
@@ -33,17 +34,22 @@ namespace CalculatorTest
                 double.Parse(Albumin20.Text) +
                 double.Parse(Dextran.Text) +
                 double.Parse(OtherColloids.Text);
+
             double CrystalDouble = double.Parse(NaCl.Text) +
                 double.Parse(NS.Text) +
                 double.Parse(HartmannsSolution.Text) +
                 double.Parse(Dextrose.Text) +
                 double.Parse(OtherCrystalloids.Text);
 
-            if (ColloidsDouble + CrystalDouble<TPV && BloodDouble + 
-                ColloidsDouble + CrystalDouble<TBV) {
+            if (ColloidsDouble + CrystalDouble<TPV && BloodDouble + ColloidsDouble + CrystalDouble<TBV)
+            {
                 Output.Text = "Sample qualifies.";
-            } else {
+                Output.BackgroundColor = Color.Aqua;
+            }
+            else
+            {
                 Output.Text = "Sample does not qualify";
+                Output.BackgroundColor = Color.Red;
             }
         }
 

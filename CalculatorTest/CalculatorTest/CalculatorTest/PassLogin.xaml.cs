@@ -20,5 +20,12 @@ namespace CalculatorTest
         private void ReturnToMain(object sender, EventArgs e) {
             App.Current.MainPage = new MainPage();
         }
+
+        protected override bool OnBackButtonPressed()
+        {
+            App.Current.MainPage = new MainPage();
+            base.OnBackButtonPressed();
+            return true;
+        }
     }
 }

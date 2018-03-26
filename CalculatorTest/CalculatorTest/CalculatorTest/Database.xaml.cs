@@ -16,9 +16,12 @@ namespace CalculatorTest
 		{
 			InitializeComponent ();
         }
-        protected override bool OnBackButtonPressed() {
+
+        protected override bool OnBackButtonPressed()
+        {
             App.Current.MainPage = new MainPage();
-            return base.OnBackButtonPressed();
+            base.OnBackButtonPressed();
+            return true;
         }
 
         private void ReturnToMain(object sender, EventArgs e) {

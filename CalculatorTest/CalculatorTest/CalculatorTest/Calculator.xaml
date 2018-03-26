@@ -9,10 +9,11 @@
             <StackLayout x:Name="Testing">
                 <Label Text="Calculate Plasma Dilution" 
                        VerticalOptions="Center" 
-                       HorizontalOptions="Center" />
+                       HorizontalOptions="Center"
+                       FontSize="Large"/>
 
                 <Label Text="Donor Weight:"/>
-                <Entry x:Name="DonorWeight" 
+                <Entry x:Name="DonorWeight" Text="1"
                    Placeholder="In KG">
                     <Entry.Behaviors>
                         <local:EntryValidateBehaviour/>
@@ -21,21 +22,21 @@
 
                 <Label Text="Blood Transfused in last the 48 hours"/>
                 <Label Text="Whole Blood:"/>
-                <Entry x:Name="WholeBlood" 
+                <Entry x:Name="WholeBlood" Text="1"
                    Placeholder="In mls">
                     <Entry.Behaviors>
                         <local:EntryValidateBehaviour/>
                     </Entry.Behaviors>
                 </Entry>
                 <Label Text="Packed Cells:"/>
-                <Entry x:Name="PackedCells" 
+                <Entry x:Name="PackedCells" Text="1"
                    Placeholder="In mls">
                     <Entry.Behaviors>
                         <local:EntryValidateBehaviour/>
                     </Entry.Behaviors>
                 </Entry>
                 <Label Text="OtherBloodProducts:"/>
-                <Entry x:Name="OtherBloodProducts" 
+                <Entry x:Name="OtherBloodProducts" Text="1"
                    Placeholder="In mls">
                     <Entry.Behaviors>
                         <local:EntryValidateBehaviour/>
@@ -44,56 +45,56 @@
 
                 <Label Text="Colloids Transfused in last the 48 hours"/>
                 <Label Text="FFP / Plasma:"/>
-                <Entry x:Name="FPPPlasma" 
+                <Entry x:Name="FPPPlasma" Text="1"
                    Placeholder="In mls">
                     <Entry.Behaviors>
                         <local:EntryValidateBehaviour/>
                     </Entry.Behaviors>
                 </Entry>
                 <Label Text="Platelets:"/>
-                <Entry x:Name="Platelets" 
+                <Entry x:Name="Platelets" Text="1"
                    Placeholder="In mls">
                     <Entry.Behaviors>
                         <local:EntryValidateBehaviour/>
                     </Entry.Behaviors>
                 </Entry>
                 <Label Text="Cryoprecipitate:"/>
-                <Entry x:Name="Cryoprecipitate" 
+                <Entry x:Name="Cryoprecipitate" Text="1"
                    Placeholder="In mls">
                     <Entry.Behaviors>
                         <local:EntryValidateBehaviour/>
                     </Entry.Behaviors>
                 </Entry>
                 <Label Text="Albumin 4%:"/>
-                <Entry x:Name="Albumin4" 
+                <Entry x:Name="Albumin4" Text="1"
                    Placeholder="In mls">
                     <Entry.Behaviors>
                         <local:EntryValidateBehaviour/>
                     </Entry.Behaviors>
                 </Entry>
                 <Label Text="Albumin 5%:"/>
-                <Entry x:Name="Albumin5" 
+                <Entry x:Name="Albumin5" Text="1"
                    Placeholder="In mls">
                     <Entry.Behaviors>
                         <local:EntryValidateBehaviour/>
                     </Entry.Behaviors>
                 </Entry>
                 <Label Text="Albumin 20%:"/>
-                <Entry x:Name="Albumin20" 
+                <Entry x:Name="Albumin20" Text="1"
                    Placeholder="In mls">
                     <Entry.Behaviors>
                         <local:EntryValidateBehaviour/>
                     </Entry.Behaviors>
                 </Entry>
                 <Label Text="Dextran:"/>
-                <Entry x:Name="Dextran" 
+                <Entry x:Name="Dextran" Text="1"
                    Placeholder="In mls">
                     <Entry.Behaviors>
                         <local:EntryValidateBehaviour/>
                     </Entry.Behaviors>
                 </Entry>
                 <Label Text="Other Colloids:"/>
-                <Entry x:Name="OtherColloids" 
+                <Entry x:Name="OtherColloids" Text="1"
                    Placeholder="In mls">
                     <Entry.Behaviors>
                         <local:EntryValidateBehaviour/>
@@ -102,35 +103,35 @@
 
                 <Label Text="Crystalloids Transfused in the last hour"/>
                 <Label Text="0.9% NaCl:"/>
-                <Entry x:Name="NaCl" 
+                <Entry x:Name="NaCl" Text="1"
                    Placeholder="In mls">
                     <Entry.Behaviors>
                         <local:EntryValidateBehaviour/>
                     </Entry.Behaviors>
                 </Entry>
                 <Label Text="0.45 NS:"/>
-                <Entry x:Name="NS" 
+                <Entry x:Name="NS" Text="1"
                    Placeholder="In mls">
                     <Entry.Behaviors>
                         <local:EntryValidateBehaviour/>
                     </Entry.Behaviors>
                 </Entry>
                 <Label Text="Hartmann's Solution:"/>
-                <Entry x:Name="HartmannsSolution" 
+                <Entry x:Name="HartmannsSolution" Text="1"
                    Placeholder="In mls">
                     <Entry.Behaviors>
                         <local:EntryValidateBehaviour/>
                     </Entry.Behaviors>
                 </Entry>
                 <Label Text="4% Dextrose and 1/5:"/>
-                <Entry x:Name="Dextrose" 
+                <Entry x:Name="Dextrose" Text="1"
                    Placeholder="In mls">
                     <Entry.Behaviors>
                         <local:EntryValidateBehaviour/>
                     </Entry.Behaviors>
                 </Entry>
                 <Label Text="Other Crystaloids:"/>
-                <Entry x:Name="OtherCrystalloids" 
+                <Entry x:Name="OtherCrystalloids" Text="1"
                    Placeholder="In mls">
                     <Entry.Behaviors>
                         <local:EntryValidateBehaviour/>
@@ -138,8 +139,7 @@
                 </Entry>
 
                 <Label x:Name="Output" 
-                   Text="" 
-                   BackgroundColor="Aqua"/>
+                   Text=""/>
 
                 <!--Buttons-->
                 <Button x:FieldModifier="CalculateButton" 

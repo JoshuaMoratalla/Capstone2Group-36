@@ -27,5 +27,12 @@ namespace CalculatorTest
                 App.Current.MainPage = new PassLogin();
             }
         }
+
+        protected override bool OnBackButtonPressed()
+        {
+            App.Current.MainPage = new MainPage();
+            base.OnBackButtonPressed();
+            return true;
+        }
     }
 }

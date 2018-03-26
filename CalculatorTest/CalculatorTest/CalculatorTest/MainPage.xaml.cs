@@ -13,14 +13,16 @@ namespace CalculatorTest {
         private void ToCalculator(object sender, EventArgs e) {
             App.Current.MainPage = new Calculator();
         }
-
         private void ToDatabase(object sender, EventArgs e) {
             App.Current.MainPage = new Database();
         }
         private void ToLogin(object sender, EventArgs e) {
             App.Current.MainPage = new Login();
         }
-
+        private void ContactUs(object sender, EventArgs e)
+        {
+            App.Current.MainPage = new ContactUs();
+        }
 
     }
 }
