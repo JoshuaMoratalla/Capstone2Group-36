@@ -1,0 +1,10 @@
+C:\Users\Joshua\source\repos\ConsoleTestforCSVread\ConsoleTestforCSVread\bin\Debug\ConsoleTestforCSVread.exe.config
+C:\Users\Joshua\source\repos\ConsoleTestforCSVread\ConsoleTestforCSVread\bin\Debug\ConsoleTestforCSVread.exe
+C:\Users\Joshua\source\repos\ConsoleTestforCSVread\ConsoleTestforCSVread\bin\Debug\ConsoleTestforCSVread.pdb
+C:\Users\Joshua\source\repos\ConsoleTestforCSVread\ConsoleTestforCSVread\obj\Debug\ConsoleTestforCSVread.csprojResolveAssemblyReference.cache
+C:\Users\Joshua\source\repos\ConsoleTestforCSVread\ConsoleTestforCSVread\obj\Debug\ConsoleTestforCSVread.csproj.CoreCompileInputs.cache
+C:\Users\Joshua\source\repos\ConsoleTestforCSVread\ConsoleTestforCSVread\obj\Debug\ConsoleTestforCSVread.exe
+C:\Users\Joshua\source\repos\ConsoleTestforCSVread\ConsoleTestforCSVread\obj\Debug\ConsoleTestforCSVread.pdb
+C:\Users\Joshua\source\repos\ConsoleTestforCSVread\ConsoleTestforCSVread\bin\Debug\ExcelDataReader.dll
+C:\Users\Joshua\source\repos\ConsoleTestforCSVread\ConsoleTestforCSVread\bin\Debug\ExcelDataReader.xml
+C:\Users\Joshua\source\repos\ConsoleTestforCSVread\ConsoleTestforCSVread\bin\Debug\ExcelReader.dll
