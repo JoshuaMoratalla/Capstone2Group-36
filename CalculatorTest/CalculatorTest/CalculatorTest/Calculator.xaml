@@ -1,51 +1,160 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:CalculatorTest"
              x:Class="CalculatorTest.Calculator">
 
     <ContentPage.Content>
         <ScrollView>
-            <StackLayout Spacing="0" Padding="0">
-                
+            <StackLayout x:Name="Testing" Margin="10">
                 <Label Text="Calculate Plasma Dilution" 
                        VerticalOptions="Center" 
-                       HorizontalOptions="Center" />
+                       HorizontalOptions="Center"
+                       FontSize="Large"
+                       FontAttributes="Bold"/>
+
+                <Label></Label>
+                <Label Text="Donor Weight:" FontSize="Medium" FontAttributes="Bold"/>
+                <Entry x:Name="DonorWeight" Text="1"
+                   Placeholder="In KG">
+                    <Entry.Behaviors>
+                        <local:EntryValidateBehaviour/>
+                    </Entry.Behaviors>
+                </Entry>
+
+                <Label></Label>
+                <Label Text="Blood Transfused in last the 48 hours" FontSize="Medium" FontAttributes="Bold"/>
+                <Label Text="Whole Blood:" FontAttributes="Italic"/>
+                <Entry x:Name="WholeBlood" Text="1"
+                   Placeholder="In mls">
+                    <Entry.Behaviors>
+                        <local:EntryValidateBehaviour/>
+                    </Entry.Behaviors>
+                </Entry>
+                <Label Text="Packed Cells:" FontAttributes="Italic"/>
+                <Entry x:Name="PackedCells" Text="1"
+                   Placeholder="In mls">
+                    <Entry.Behaviors>
+                        <local:EntryValidateBehaviour/>
+                    </Entry.Behaviors>
+                </Entry>
+                <Label Text="Other Blood Products:" FontAttributes="Italic"/>
+                <Entry x:Name="OtherBloodProducts" Text="1"
+                   Placeholder="In mls">
+                    <Entry.Behaviors>
+                        <local:EntryValidateBehaviour/>
+                    </Entry.Behaviors>
+                </Entry>
+
+                <Label></Label>
+                <Label Text="Colloids Transfused in last the 48 hours" FontSize="Medium" FontAttributes="Bold"/>
+                <Label Text="FFP / Plasma:" FontAttributes="Italic"/>
+                <Entry x:Name="FPPPlasma" Text="1"
+                   Placeholder="In mls">
+                    <Entry.Behaviors>
+                        <local:EntryValidateBehaviour/>
+                    </Entry.Behaviors>
+                </Entry>
+                <Label Text="Platelets:" FontAttributes="Italic"/>
+                <Entry x:Name="Platelets" Text="1"
+                   Placeholder="In mls">
+                    <Entry.Behaviors>
+                        <local:EntryValidateBehaviour/>
+                    </Entry.Behaviors>
+                </Entry>
+                <Label Text="Cryoprecipitate:" FontAttributes="Italic"/>
+                <Entry x:Name="Cryoprecipitate" Text="1"
+                   Placeholder="In mls">
+                    <Entry.Behaviors>
+                        <local:EntryValidateBehaviour/>
+                    </Entry.Behaviors>
+                </Entry>
+                <Label Text="Albumin 4%:" FontAttributes="Italic"/>
+                <Entry x:Name="Albumin4" Text="1"
+                   Placeholder="In mls">
+                    <Entry.Behaviors>
+                        <local:EntryValidateBehaviour/>
+                    </Entry.Behaviors>
+                </Entry>
+                <Label Text="Albumin 5%:" FontAttributes="Italic"/>
+                <Entry x:Name="Albumin5" Text="1"
+                   Placeholder="In mls">
+                    <Entry.Behaviors>
+                        <local:EntryValidateBehaviour/>
+                    </Entry.Behaviors>
+                </Entry>
+                <Label Text="Albumin 20%:" FontAttributes="Italic"/>
+                <Entry x:Name="Albumin20" Text="1"
+                   Placeholder="In mls">
+                    <Entry.Behaviors>
+                        <local:EntryValidateBehaviour/>
+                    </Entry.Behaviors>
+                </Entry>
+                <Label Text="Dextran:" FontAttributes="Italic"/>
+                <Entry x:Name="Dextran" Text="1"
+                   Placeholder="In mls">
+                    <Entry.Behaviors>
+                        <local:EntryValidateBehaviour/>
+                    </Entry.Behaviors>
+                </Entry>
+                <Label Text="Other Colloids:" FontAttributes="Italic"/>
+                <Entry x:Name="OtherColloids" Text="1"
+                   Placeholder="In mls">
+                    <Entry.Behaviors>
+                        <local:EntryValidateBehaviour/>
+                    </Entry.Behaviors>
+                </Entry>
+
+                <Label></Label>
+                <Label Text="Crystalloids Transfused in the last hour" FontSize="Medium" FontAttributes="Bold"/>
+                <Label Text="0.9% NaCl:" FontAttributes="Italic"/>
+                <Entry x:Name="NaCl" Text="1"
+                   Placeholder="In mls">
+                    <Entry.Behaviors>
+                        <local:EntryValidateBehaviour/>
+                    </Entry.Behaviors>
+                </Entry>
+                <Label Text="0.45 NS:" FontAttributes="Italic"/>
+                <Entry x:Name="NS" Text="1"
+                   Placeholder="In mls">
+                    <Entry.Behaviors>
+                        <local:EntryValidateBehaviour/>
+                    </Entry.Behaviors>
+                </Entry>
+                <Label Text="Hartmann's Solution:" FontAttributes="Italic"/>
+                <Entry x:Name="HartmannsSolution" Text="1"
+                   Placeholder="In mls">
+                    <Entry.Behaviors>
+                        <local:EntryValidateBehaviour/>
+                    </Entry.Behaviors>
+                </Entry>
+                <Label Text="4% Dextrose and 1/5:" FontAttributes="Italic"/>
+                <Entry x:Name="Dextrose" Text="1"
+                   Placeholder="In mls">
+                    <Entry.Behaviors>
+                        <local:EntryValidateBehaviour/>
+                    </Entry.Behaviors>
+                </Entry>
+                <Label Text="Other Crystaloids:" FontAttributes="Italic"/>
+                <Entry x:Name="OtherCrystalloids" Text="1"
+                   Placeholder="In mls">
+                    <Entry.Behaviors>
+                        <local:EntryValidateBehaviour/>
+                    </Entry.Behaviors>
+                </Entry>
+
                 <Label x:Name="Output" 
-                   Text="Insert Values" 
-                   BackgroundColor="Aqua"/>
-                <Label Text="Donor Weight"/>
-                <Entry x:Name="WeightInput" 
-                   Placeholder="In KG"/>
+                   Text=""/>
 
-                <Label Text="Blood Trans. in 48 hours" 
-                   />
-                <Entry x:Name="BloodInput" 
-                   Placeholder="In mls" 
-                  />
-
-                <Label Text="Colloids Trans. in last 48 hours" 
-                   />
-                <Entry x:Name="ColloidInput" 
-                   Placeholder="In mls" 
-                  />
-
-                <Label Text="Crystalloids Trans. in last hour" 
-                  />
-                <Entry x:Name="CrystalInput" 
-                   Placeholder="In mls" 
-                  />
-
+                <!--Buttons-->
                 <Button x:FieldModifier="CalculateButton" 
                     Text="Calculate" 
-                    Clicked="Button_Clicked"  
-                />
+                    Clicked="Button_Clicked"/>
                 <Button
                     Text="Return to Main"
                     Clicked="ReturnToMain"/>
 
-
             </StackLayout>
-
         </ScrollView>
     </ContentPage.Content>
 </ContentPage>

@@ -17,34 +17,81 @@ namespace CalculatorTest
 			InitializeComponent ();
         }
         private void Button_Clicked(object sender, EventArgs e) {
-            var Weight = WeightInput.Text;
-            double WeightDouble = double.Parse(Weight);
 
+            double WeightDouble = double.Parse(DonorWeight.Text);
             double TPV = WeightDouble / 0.025;
             double TBV = WeightDouble / 0.015;
 
-            var Blood = BloodInput.Text;
-            var Colloids = ColloidInput.Text;
-            var Crystal = CrystalInput.Text;
+            double BloodDouble = double.Parse(WholeBlood.Text) +
+                double.Parse(PackedCells.Text) +
+                double.Parse(OtherBloodProducts.Text);
 
-            double BloodDouble = double.Parse(Blood);
-            double ColloidsDouble = double.Parse(Colloids);
-            double CrystalDouble = double.Parse(Crystal);
+            double ColloidsDouble = double.Parse(FPPPlasma.Text) +
+                double.Parse(Platelets.Text) +
+                double.Parse(Cryoprecipitate.Text) +
+                double.Parse(Albumin4.Text) +
+                double.Parse(Albumin5.Text) +
+                double.Parse(Albumin20.Text) +
+                double.Parse(Dextran.Text) +
+                double.Parse(OtherColloids.Text);
 
-            if (ColloidsDouble + CrystalDouble<TPV && BloodDouble + 
-                ColloidsDouble + CrystalDouble<TBV) {
-                Output.Text = "Donor successful to qualify for suitability";
-            } else {
-                Output.Text = "Donor failed to qualify for suitability";
+            double CrystalDouble = double.Parse(NaCl.Text) +
+                double.Parse(NS.Text) +
+                double.Parse(HartmannsSolution.Text) +
+                double.Parse(Dextrose.Text) +
+                double.Parse(OtherCrystalloids.Text);
+
+            if (ColloidsDouble + CrystalDouble < TPV && 
+                BloodDouble + ColloidsDouble + CrystalDouble < TBV)
+            {
+                Output.Text = "Sample qualifies.";
+                Output.BackgroundColor = Color.Aqua;
+            }
+            else
+            {
+                Output.Text = "Sample does not qualify";
+                Output.BackgroundColor = Color.Red;
             }
         }
+
          protected override bool OnBackButtonPressed() {
             App.Current.MainPage = new MainPage();
-            return base.OnBackButtonPressed();
+            base.OnBackButtonPressed();
+            return true;
         }
 
         private void ReturnToMain(object sender, EventArgs e) {
             App.Current.MainPage = new MainPage();
+        }
+    }
+
+    public class EntryValidateBehaviour : Behavior<Entry>
+    {
+        protected override void OnAttachedTo(Entry entry)
+        {
+            entry.TextChanged += OnEntryTextChanged;
+            base.OnAttachedTo(entry);
+        }
+
+        protected override void OnDetachingFrom(Entry entry)
+        {
+            entry.TextChanged -= OnEntryTextChanged;
+            base.OnDetachingFrom(entry);
+        }
+
+        void OnEntryTextChanged(object sender, TextChangedEventArgs args)
+        {
+            bool isValid = true;
+            if (args.NewTextValue == ".")
+            {
+                ((Entry)sender).Text = "0.";
+            }
+            else if (args.NewTextValue != "")
+            {
+                isValid = double.TryParse(args.NewTextValue, out double result);
+            }
+            ((Entry)sender).BackgroundColor = isValid ? Color.Default : Color.Red;
+            
         }
     }
 }

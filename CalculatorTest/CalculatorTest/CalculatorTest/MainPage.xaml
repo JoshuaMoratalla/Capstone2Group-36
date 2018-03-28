@@ -21,6 +21,10 @@
                 VerticalOptions="Center"
                 HorizontalOptions="Center"
                 Clicked="ToLogin"/>
+        <Button Text="Contact Us"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+                Clicked="ContactUs"/>
     </StackLayout>
 
 </ContentPage>

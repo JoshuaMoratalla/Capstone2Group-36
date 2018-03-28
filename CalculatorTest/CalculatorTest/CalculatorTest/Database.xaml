@@ -6,7 +6,8 @@
         <StackLayout>
             <Label Text="Database Page" 
                    VerticalOptions="Center"
-                   HorizontalOptions="Center"/>
+                   HorizontalOptions="Center"
+                   FontSize="Large"/>
             <Button Text="Return To Main"
                     VerticalOptions="Center"
                     HorizontalOptions="Center"
