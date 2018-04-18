@@ -41,6 +41,7 @@
     <Compile Include="Calculator.xaml.cs">
       <DependentUpon>Calculator.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DatabaseTestClass.cs" />
     <Compile Include="Database.xaml.cs">
       <DependentUpon>Database.xaml</DependentUpon>
     </Compile>

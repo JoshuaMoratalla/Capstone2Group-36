@@ -15,6 +15,7 @@ namespace CalculatorTest
 		public Database ()
 		{
 			InitializeComponent ();
+            listview.ItemsSource = ConditionData.ConditionList;
         }
 
         protected override bool OnBackButtonPressed()
@@ -26,6 +27,16 @@ namespace CalculatorTest
 
         private void ReturnToMain(object sender, EventArgs e) {
             App.Current.MainPage = new MainPage();
+        }
+
+        private void listview_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            if (e.SelectedItem != null)
+            {
+                var selection = e.SelectedItem as Condition;
+                DisplayAlert(selection.Name, selection.Description, "OK");
+                listview.SelectedItem = null;
+            }
         }
     }
 }

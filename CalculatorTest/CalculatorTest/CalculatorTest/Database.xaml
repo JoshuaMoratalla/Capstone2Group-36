@@ -3,11 +3,30 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CalculatorTest.Database">
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout Margin="10">
             <Label Text="Database Page" 
                    VerticalOptions="Center"
                    HorizontalOptions="Center"
                    FontSize="Large"/>
+            <Entry Placeholder="Search Goes Here"/>
+            <ScrollView>
+                <ListView x:Name="listview" RowHeight="30" ItemSelected="listview_ItemSelected" >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Grid.Column="0" Text="{Binding Name}"/>
+                                    <Label Grid.Column="1" Text="{Binding Decision}"/>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </ScrollView>
             <Button Text="Return To Main"
                     VerticalOptions="Center"
                     HorizontalOptions="Center"
