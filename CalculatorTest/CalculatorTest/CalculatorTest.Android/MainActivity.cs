@@ -8,6 +8,7 @@ using Android.Widget;
 using Android.OS;
 using Android.Content.Res;
 using System.IO;
+using System.Text;
 
 namespace CalculatorTest.Droid {
     [Activity(Label = "CalculatorTest", Icon = "@drawable/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
@@ -21,7 +22,7 @@ namespace CalculatorTest.Droid {
             string Excelfile = "";
 
             AssetManager assets = this.Assets;
-            using (StreamReader sr = new StreamReader(assets.Open("ConditionsExcel.xlsx")))
+            using (StreamReader sr = new StreamReader(assets.Open("ConditionsExcel.xlsx"), System.Text.Encoding.GetEncoding(1252)))
             {
                 Excelfile = sr.ReadToEnd();
             }

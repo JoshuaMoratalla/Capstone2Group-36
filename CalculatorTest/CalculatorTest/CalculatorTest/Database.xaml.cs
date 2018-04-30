@@ -15,7 +15,7 @@ namespace CalculatorTest
 		public Database ()
 		{
 			InitializeComponent ();
-            listview.ItemsSource = ConditionData.ConditionList;
+            listview.ItemsSource = App.ExcelSheetFinal;
         }
 
         protected override bool OnBackButtonPressed()
@@ -33,8 +33,11 @@ namespace CalculatorTest
         {
             if (e.SelectedItem != null)
             {
-                var selection = e.SelectedItem as Condition;
-                DisplayAlert(selection.Name, selection.Description, "OK");
+                var selection = e.SelectedItem as App.ConditionTest;
+                if (selection.ID != 0)
+                {
+                    DisplayAlert(selection.Name, "Action\r\n" + selection.Action + "\r\n\r\nExplanation\r\n" + selection.Explanation, "OK");
+                }
                 listview.SelectedItem = null;
             }
         }

@@ -10,7 +10,7 @@
                    FontSize="Large"/>
             <Entry Placeholder="Search Goes Here"/>
             <ScrollView>
-                <ListView x:Name="listview" RowHeight="30" ItemSelected="listview_ItemSelected" >
+                <ListView x:Name="listview" HasUnevenRows="True" ItemSelected="listview_ItemSelected" >
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
@@ -18,9 +18,16 @@
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="*"/>
                                         <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
                                     </Grid.ColumnDefinitions>
-                                    <Label Grid.Column="0" Text="{Binding Name}"/>
-                                    <Label Grid.Column="1" Text="{Binding Decision}"/>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
+                                    <Label Grid.Column="0" Grid.Row="0" Text="{Binding Name}"/>
+                                    <Label Grid.Column="1" Grid.Row="0" Text="{Binding Commonlyknownas}"/>
+                                    <Label Grid.Column="2" Grid.Row="0" Text="{Binding Abbreviations}"/>
+                                    <Label Grid.Column="3" Grid.Row="0" Text="{Binding Seealso}"/>
                                 </Grid>
                             </ViewCell>
                         </DataTemplate>

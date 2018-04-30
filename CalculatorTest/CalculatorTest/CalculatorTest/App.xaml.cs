@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -11,7 +11,18 @@ namespace CalculatorTest
     public partial class App : Application
     {
 
-        public static List<string[]> ExcelSheetFinal = new List<string[]>();
+        public static ObservableCollection<ConditionTest> ExcelSheetFinal = new ObservableCollection<ConditionTest>();
+
+        public class ConditionTest
+        {
+            public int ID { get; set; }
+            public string Name { get; set; }
+            public string Explanation { get; set; }
+            public string Action { get; set; }
+            public string Commonlyknownas { get; set; }
+            public string Abbreviations { get; set; }
+            public string Seealso { get; set; }
+        }
 
         public App()
         {
@@ -25,35 +36,51 @@ namespace CalculatorTest
             InitializeComponent();
 
             MainPage = new CalculatorTest.MainPage();
+
             if (Excelstring != "")
             {
-                using (var reader = ExcelReaderFactory.CreateReader(GenerateStreamFromString(Excelstring)))
+                using (Stream testing = GenerateStreamFromString(Excelstring))
                 {
-                    var ExcelSheet = new List<string[]>();
-                    do
+                    using (var reader = ExcelReaderFactory.CreateOpenXmlReader(testing))
                     {
-                        while (reader.Read())
+                        var ExcelSheet = new ObservableCollection<ConditionTest>();
+                        do
                         {
-                            string[] ConditionLine = { reader.GetString(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetString(5) };
-                            ExcelSheet.Add(ConditionLine);
-                        }
-                    } while (reader.NextResult());
-                    ExcelSheetFinal = ExcelSheet;
+                            int IDvar = -1;
+                            while (reader.Read())
+                            {
+                                IDvar++;
+                                ConditionTest ConditionLine = new ConditionTest
+                                {
+                                    ID = IDvar,
+                                    Name = reader.GetString(0),
+                                    Explanation = reader.GetString(1),
+                                    Action = reader.GetString(2),
+                                    Commonlyknownas = reader.GetString(3),
+                                    Abbreviations = reader.GetString(4),
+                                    Seealso = reader.GetString(5)
+                                };
+
+                                ExcelSheet.Add(ConditionLine);
+                            }
+                        } while (reader.NextResult());
+                        ExcelSheetFinal = ExcelSheet;
+                    }
                 }
             }
             else
             {
                 throw new System.ArgumentException("Broken");//TESTING_JASON
             }
+
         }
 
         public static Stream GenerateStreamFromString(string s)
         {
-            var stream = new MemoryStream();
-            var writer = new StreamWriter(stream);
-            writer.Write(s);
-            writer.Flush();
-            stream.Position = 0;
+            // convert string to stream
+            byte[] byteArray = Encoding.GetEncoding(1252).GetBytes(s);
+            //byte[] byteArray = Encoding.ASCII.GetBytes(contents);
+            MemoryStream stream = new MemoryStream(byteArray);
             return stream;
         }
 
