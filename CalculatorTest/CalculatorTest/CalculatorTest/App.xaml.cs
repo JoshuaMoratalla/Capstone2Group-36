@@ -11,11 +11,11 @@ namespace CalculatorTest
     public partial class App : Application
     {
 
-        public static ObservableCollection<ConditionTest> ExcelSheetFinal = new ObservableCollection<ConditionTest>();
+        public static ObservableCollection<Condition> ExcelSheetFinal = new ObservableCollection<Condition>();
 
-        public class ConditionTest
+        public class Condition
         {
-            public int ID { get; set; }
+            public int ID { get; set; }//Assigns 0..X So 0 can be the titles of the database
             public string Name { get; set; }
             public string Explanation { get; set; }
             public string Action { get; set; }
@@ -24,57 +24,74 @@ namespace CalculatorTest
             public string Seealso { get; set; }
         }
 
-        public App()
+        public App()//Default App load. Doesnt set excel sheet.
         {
             InitializeComponent();
 
             MainPage = new CalculatorTest.MainPage();
         }
 
-        public App(string Excelstring)
+        public App(string Excelstring)//New App load. Grabs string from Android/iOS
         {
             InitializeComponent();
 
             MainPage = new CalculatorTest.MainPage();
 
+            #region Excel Processing
             if (Excelstring != "")
             {
-                using (Stream testing = GenerateStreamFromString(Excelstring))
+                using (Stream testing = GenerateStreamFromString(Excelstring))//Stream generated
                 {
-                    using (var reader = ExcelReaderFactory.CreateOpenXmlReader(testing))
+                    using (var reader = ExcelReaderFactory.CreateOpenXmlReader(testing))//Excelread
                     {
-                        var ExcelSheet = new ObservableCollection<ConditionTest>();
+                        var ExcelSheet = new ObservableCollection<Condition>();//Builds Collection
                         do
                         {
                             int IDvar = -1;
                             while (reader.Read())
                             {
                                 IDvar++;
-                                ConditionTest ConditionLine = new ConditionTest
+                                Condition ConditionLine = new Condition
                                 {
                                     ID = IDvar,
-                                    Name = reader.GetString(0),
-                                    Explanation = reader.GetString(1),
-                                    Action = reader.GetString(2),
-                                    Commonlyknownas = reader.GetString(3),
-                                    Abbreviations = reader.GetString(4),
-                                    Seealso = reader.GetString(5)
+                                    Name = Trimwhitespaces(reader.GetString(0)),
+                                    Explanation = Trimwhitespaces(reader.GetString(1)),
+                                    Action = Trimwhitespaces(reader.GetString(2)),
+                                    Commonlyknownas = Trimwhitespaces(reader.GetString(3)),
+                                    Abbreviations = Trimwhitespaces(reader.GetString(4)),
+                                    Seealso = Trimwhitespaces(reader.GetString(5))
                                 };
 
                                 ExcelSheet.Add(ConditionLine);
                             }
                         } while (reader.NextResult());
+
                         ExcelSheetFinal = ExcelSheet;
                     }
                 }
             }
             else
             {
-                throw new System.ArgumentException("Broken");//TESTING_JASON
+                throw new System.ArgumentException("Excel File did not load Correctly");//TESTING_JASON
             }
-
+            #endregion
         }
 
+        private static string Trimwhitespaces(string input)//trims white space
+        {
+            string output = "";
+            if (input == null)
+            {
+                output = "";
+            }
+            else
+            {
+                output = input.Trim();
+            }
+            return output;
+        }
+
+        //Converts the string to a strem
         public static Stream GenerateStreamFromString(string s)
         {
             // convert string to stream

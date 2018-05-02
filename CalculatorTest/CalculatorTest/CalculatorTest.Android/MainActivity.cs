@@ -19,15 +19,17 @@ namespace CalculatorTest.Droid {
 
             base.OnCreate(bundle);
 
+            //Grabs the excel spreadsheet puts it into a string
+            #region ExcelLoading
             string Excelfile = "";
-
             AssetManager assets = this.Assets;
             using (StreamReader sr = new StreamReader(assets.Open("ConditionsExcel.xlsx"), System.Text.Encoding.GetEncoding(1252)))
             {
                 Excelfile = sr.ReadToEnd();
             }
+            #endregion
 
-                global::Xamarin.Forms.Forms.Init(this, bundle);
+            global::Xamarin.Forms.Forms.Init(this, bundle);
             LoadApplication(new App(Excelfile));
         }
     }

@@ -6,12 +6,12 @@
         <StackLayout Margin="10">
             <Label Text="Database Page" 
                    VerticalOptions="Center"
-                   HorizontalOptions="Center"
+                   HorizontalOptions="CenterAndExpand"
                    FontSize="Large"/>
             <Entry Placeholder="Search Goes Here"/>
-            <ScrollView>
+            <ScrollView Orientation="Both">
                 <ListView x:Name="listview" HasUnevenRows="True" ItemSelected="listview_ItemSelected" >
-                    <ListView.ItemTemplate>
+                    <ListView.ItemTemplate >
                         <DataTemplate>
                             <ViewCell>
                                 <Grid>

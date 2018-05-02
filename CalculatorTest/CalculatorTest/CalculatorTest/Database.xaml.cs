@@ -29,14 +29,14 @@ namespace CalculatorTest
             App.Current.MainPage = new MainPage();
         }
 
-        private void listview_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        private void listview_ItemSelected(object sender, SelectedItemChangedEventArgs e)//on click show a displau of action and explanation
         {
             if (e.SelectedItem != null)
             {
-                var selection = e.SelectedItem as App.ConditionTest;
+                var selection = e.SelectedItem as App.Condition;
                 if (selection.ID != 0)
                 {
-                    DisplayAlert(selection.Name, "Action\r\n" + selection.Action + "\r\n\r\nExplanation\r\n" + selection.Explanation, "OK");
+                    DisplayAlert(selection.Name, App.ExcelSheetFinal[0].Action.ToString() + Environment.NewLine + selection.Action + "\r\n\r\n" + App.ExcelSheetFinal[0].Explanation.ToString() + "\r\n" + selection.Explanation, "OK");
                 }
                 listview.SelectedItem = null;
             }
