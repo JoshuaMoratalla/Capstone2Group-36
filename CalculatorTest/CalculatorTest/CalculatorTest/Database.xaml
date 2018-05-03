@@ -4,13 +4,13 @@
              x:Class="CalculatorTest.Database">
     <ContentPage.Content>
         <StackLayout Margin="10">
-            <Label Text="Database Page" 
+            <Label Text="Contraindication Guidelines" 
                    VerticalOptions="Center"
                    HorizontalOptions="CenterAndExpand"
                    FontSize="Large"/>
             <Entry Placeholder="Search Goes Here"/>
-            <ScrollView Orientation="Both">
-                <ListView x:Name="listview" HasUnevenRows="True" ItemSelected="listview_ItemSelected" >
+            <ScrollView Orientation="Horizontal">
+                <ListView x:Name="listview" HasUnevenRows="True" ItemSelected="listview_ItemSelected" WidthRequest="560">
                     <ListView.ItemTemplate >
                         <DataTemplate>
                             <ViewCell>
@@ -24,6 +24,7 @@
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="Auto"/>
                                     </Grid.RowDefinitions>
+                                    <BoxView Color="{Binding ActionColor}" Grid.Column="0" Grid.ColumnSpan="4"/>
                                     <Label Grid.Column="0" Grid.Row="0" Text="{Binding Name}"/>
                                     <Label Grid.Column="1" Grid.Row="0" Text="{Binding Commonlyknownas}"/>
                                     <Label Grid.Column="2" Grid.Row="0" Text="{Binding Abbreviations}"/>

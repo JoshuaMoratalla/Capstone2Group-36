@@ -4,16 +4,16 @@
              xmlns:local="clr-namespace:CalculatorTest"
              x:Class="CalculatorTest.MainPage">
     <StackLayout>
+        <Image Source="EBAANZ_LOGO.jpg"/>
         <Label HorizontalOptions="Center"
                VerticalOptions="Center"
                Text="EBAANZ Mobile App"
-               FontSize="Large"
-        />
+               FontSize="Large"/>
         <Button Text="Calculator"
                 VerticalOptions="Center"
                 HorizontalOptions="Center"
                 Clicked="ToCalculator"/>
-        <Button Text="Conditions and Diseases"
+        <Button Text="Contraindication Guidelines"
                 VerticalOptions="Center"
                 HorizontalOptions="Center"
                 Clicked="ToDatabase"/>

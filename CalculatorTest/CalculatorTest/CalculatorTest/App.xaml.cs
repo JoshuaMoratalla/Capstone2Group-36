@@ -22,6 +22,7 @@ namespace CalculatorTest
             public string Commonlyknownas { get; set; }
             public string Abbreviations { get; set; }
             public string Seealso { get; set; }
+            public string ActionColor { get; set; }
         }
 
         public App()//Default App load. Doesnt set excel sheet.
@@ -48,9 +49,38 @@ namespace CalculatorTest
                         do
                         {
                             int IDvar = -1;
+                            int colortest = 6;
                             while (reader.Read())
                             {
                                 IDvar++;
+                                if (colortest == 0)
+                                {
+                                    colortest = 1;
+                                }
+                                else if (colortest == 1)
+                                {
+                                    colortest = 2;
+                                }
+                                else if (colortest == 2)
+                                {
+                                    colortest = 3;
+                                }
+                                else if (colortest == 3)
+                                {
+                                    colortest = 4;
+                                }
+                                else if (colortest == 4)
+                                {
+                                    colortest = 5;
+                                }
+                                else if (colortest == 5)
+                                {
+                                    colortest = 6;
+                                }
+                                else if (colortest == 6)
+                                {
+                                    colortest = 0;
+                                }
                                 Condition ConditionLine = new Condition
                                 {
                                     ID = IDvar,
@@ -59,7 +89,8 @@ namespace CalculatorTest
                                     Action = Trimwhitespaces(reader.GetString(2)),
                                     Commonlyknownas = Trimwhitespaces(reader.GetString(3)),
                                     Abbreviations = Trimwhitespaces(reader.GetString(4)),
-                                    Seealso = Trimwhitespaces(reader.GetString(5))
+                                    Seealso = Trimwhitespaces(reader.GetString(5)),
+                                    ActionColor = SetColour(colortest)
                                 };
 
                                 ExcelSheet.Add(ConditionLine);
@@ -91,6 +122,41 @@ namespace CalculatorTest
             return output;
         }
 
+        private static string SetColour(int input)
+        {
+            string output = "#FFFFFF";
+            if (input == 0)
+            {
+                output = "#FFFFFF";
+            }
+            else if (input == 1)
+            {
+                output = "#ED3125";
+            }
+            else if (input == 2)
+            {
+                output = "#FEF200";
+            }
+            else if (input == 3)
+            {
+                output = "#00853E";
+            }
+            else if (input == 4)
+            {
+                output = "#8A2529";
+            }
+            else if (input == 5)
+            {
+                output = "#00A6DA";
+            }
+            else if (input == 6)
+            {
+                output = "#013D79";
+            }
+
+
+            return output;
+        }
         //Converts the string to a strem
         public static Stream GenerateStreamFromString(string s)
         {
