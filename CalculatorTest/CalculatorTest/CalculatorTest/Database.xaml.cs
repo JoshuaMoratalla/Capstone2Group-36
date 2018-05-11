@@ -29,7 +29,25 @@ namespace CalculatorTest
             App.Current.MainPage = new MainPage();
         }
 
-        private void listview_ItemSelected(object sender, SelectedItemChangedEventArgs e)//on click show a displau of action and explanation
+        private void SearchBar_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (string.IsNullOrEmpty(e.NewTextValue))
+            {
+                listview.ItemsSource = App.ExcelSheetFinal;
+            }
+            else
+            {
+                listview.ItemsSource = App.ExcelSheetFinal.Where(x => 
+                x.Name.ToLower().Contains(e.NewTextValue.ToLower()) || 
+                x.ID.Equals(0) ||
+                x.Commonlyknownas.ToLower().Contains(e.NewTextValue.ToLower()) ||
+                x.Abbreviations.ToLower().Contains(e.NewTextValue.ToLower()) ||
+                x.Seealso.ToLower().Contains(e.NewTextValue.ToLower())
+                );
+            }
+        }
+
+        private void Listview_ItemSelected(object sender, SelectedItemChangedEventArgs e)//on click show a displau of action and explanation
         {
             if (e.SelectedItem != null)
             {
