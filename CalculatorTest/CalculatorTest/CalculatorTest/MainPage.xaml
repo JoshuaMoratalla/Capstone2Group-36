@@ -8,7 +8,8 @@
         <Label HorizontalOptions="Center"
                VerticalOptions="Center"
                Text="EBAANZ Mobile App"
-               FontSize="Large"/>
+               FontSize="Large"
+               TextColor="Black"/>
         <Button Text="Calculator"
                 VerticalOptions="Center"
                 HorizontalOptions="Center"

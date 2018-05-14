@@ -12,55 +12,86 @@ namespace CalculatorTest
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class Calculator : ContentPage
 	{
+        public bool isvalid = true;
+
 		public Calculator ()
 		{
 			InitializeComponent ();
         }
+
         private void Button_Clicked(object sender, EventArgs e) {
 
-            double WeightDouble = double.Parse(DonorWeight.Text);
-            double TPV = WeightDouble / 0.025;
-            double TBV = WeightDouble / 0.015;
+            isvalid = true;
+            double WeightDouble = VerifyText(DonorWeight.Text);
 
-            double BloodDouble = double.Parse(WholeBlood.Text) +
-                double.Parse(PackedCells.Text) +
-                double.Parse(OtherBloodProducts.Text);
+            double BloodDouble =
+                VerifyText(WholeBlood.Text) +
+                VerifyText(PackedCells.Text) +
+                VerifyText(OtherBloodProducts.Text);
 
-            double ColloidsDouble = double.Parse(FPPPlasma.Text) +
-                double.Parse(Platelets.Text) +
-                double.Parse(Cryoprecipitate.Text) +
-                double.Parse(Albumin4.Text) +
-                double.Parse(Albumin5.Text) +
-                double.Parse(Albumin20.Text) +
-                double.Parse(Dextran.Text) +
-                double.Parse(OtherColloids.Text);
+            double ColloidsDouble =
+                VerifyText(FPPPlasma.Text) +
+                VerifyText(Platelets.Text) +
+                VerifyText(Cryoprecipitate.Text) +
+                VerifyText(Albumin4.Text) +
+                VerifyText(Albumin5.Text) +
+                VerifyText(Albumin20.Text) +
+                VerifyText(Dextran.Text) +
+                VerifyText(OtherColloids.Text);
 
-            double CrystalDouble = double.Parse(NaCl.Text) +
-                double.Parse(NS.Text) +
-                double.Parse(HartmannsSolution.Text) +
-                double.Parse(Dextrose.Text) +
-                double.Parse(OtherCrystalloids.Text);
+            double CrystalDouble =
+                VerifyText(NaCl.Text) +
+                VerifyText(NS.Text) +
+                VerifyText(HartmannsSolution.Text) +
+                VerifyText(Dextrose.Text) +
+                VerifyText(OtherCrystalloids.Text);
 
-            if (ColloidsDouble + CrystalDouble < TPV && 
-                BloodDouble + ColloidsDouble + CrystalDouble < TBV)
+            if (isvalid == false)
             {
-                Output.Text = "Sample qualifies.";
-                Output.BackgroundColor = Color.Aqua;
+                Output.Text = "Invalid Sample Entry";
+                Output.BackgroundColor = Color.FromHex("#FEF200");
             }
             else
             {
-                Output.Text = "Sample does not qualify";
-                Output.BackgroundColor = Color.Red;
+                double TPV = WeightDouble / 0.025;
+                double TBV = WeightDouble / 0.015;
+
+                if (ColloidsDouble + CrystalDouble < TPV &&
+                    BloodDouble + ColloidsDouble + CrystalDouble < TBV)
+                {
+                    Output.Text = "Sample qualifies.";
+                    Output.BackgroundColor = Color.FromHex("#00853E");
+                }
+                else
+                {
+                    Output.Text = "Sample does not qualify";
+                    Output.BackgroundColor = Color.FromHex("#ED3125");
+                }
             }
         }
 
-         protected override bool OnBackButtonPressed() {
+        private double VerifyText(string input)
+        {
+
+            isvalid = double.TryParse(input, out double output);
+            
+            if (isvalid == false)
+            {
+                output = 0;
+            }
+
+            return output;
+        }
+
+        protected override bool OnBackButtonPressed()
+        {
             App.Current.MainPage = new MainPage();
             base.OnBackButtonPressed();
             return true;
         }
 
-        private void ReturnToMain(object sender, EventArgs e) {
+        private void ReturnToMain(object sender, EventArgs e)
+        {
             App.Current.MainPage = new MainPage();
         }
     }
@@ -90,7 +121,7 @@ namespace CalculatorTest
             {
                 isValid = double.TryParse(args.NewTextValue, out double result);
             }
-            ((Entry)sender).BackgroundColor = isValid ? Color.Default : Color.Red;
+            ((Entry)sender).BackgroundColor = isValid ? Color.Default : Color.FromHex("#ED3125");
             
         }
     }
