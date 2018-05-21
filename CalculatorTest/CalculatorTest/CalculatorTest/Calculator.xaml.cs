@@ -97,6 +97,7 @@ namespace CalculatorTest
 
         private void EntryComplete(object sender, EventArgs e)
         {
+            ((Entry)sender).Unfocus();
             FocusEntry(((Entry)sender).AutomationId);
         }
 
