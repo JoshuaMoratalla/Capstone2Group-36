@@ -3,18 +3,15 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CalculatorTest.Login">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Login Function" 
-                   FontSize="Large"/>
-            <Label Text="Username"/>
-            <Entry x:Name="UserNameInput" />
+        <StackLayout Margin="10">
+            <Label Text="Login" 
+                   FontSize="Large"
+                   HorizontalOptions="Center"/>
+            <Label></Label>
             <Label Text="Password"/>
-            <Entry x:Name="PasswordInput" />
+            <Entry x:Name="PasswordInput" IsPassword="True" IsSpellCheckEnabled="False" Completed="PasswordComplete"/>
             <Button Text="Login"
                     Clicked="LoginButton"/>
-            
-            <Button Text="Return to Main"
-                    Clicked="ReturnToMain"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -7,19 +7,18 @@
     <ContentPage.Content>
         <ScrollView>
             <StackLayout x:Name="Testing" Margin="10">
-                
+
                 <Label Text="Calculate Plasma Dilution" 
                        VerticalOptions="Center" 
                        HorizontalOptions="Center"
                        FontSize="Large"
                        FontAttributes="Bold"
-                       TextColor="Black"/>
+                       TextColor="Black"
+                       Margin="10"/>
 
-                <Label></Label>
-                
                 <Label Text="Donor Weight:" FontSize="Medium" FontAttributes="Bold" TextColor="Black"/>
                 <Entry x:Name="DonorWeight"
-                   Placeholder="In KG">
+                   Placeholder="In KG" Completed="EntryComplete" AutomationId="0">
                     <Entry.Behaviors>
                         <local:EntryValidateBehaviour/>
                     </Entry.Behaviors>
@@ -30,7 +29,7 @@
                 <Label Text="Blood Transfused in last the 48 hours" FontSize="Medium" FontAttributes="Bold" TextColor="Black"/>
                 <Label Text="Whole Blood:" FontAttributes="Italic"/>
                 <Entry x:Name="WholeBlood"
-                   Placeholder="In mls">
+                   Placeholder="In mls" Completed="EntryComplete" AutomationId="1">
                     <Entry.Behaviors>
                         <local:EntryValidateBehaviour/>
                     </Entry.Behaviors>
@@ -38,7 +37,7 @@
                 
                 <Label Text="Packed Cells:" FontAttributes="Italic"/>
                 <Entry x:Name="PackedCells"
-                   Placeholder="In mls">
+                   Placeholder="In mls" Completed="EntryComplete" AutomationId="2">
                     <Entry.Behaviors>
                         <local:EntryValidateBehaviour/>
                     </Entry.Behaviors>
@@ -46,7 +45,7 @@
                 
                 <Label Text="Other Blood Products:" FontAttributes="Italic"/>
                 <Entry x:Name="OtherBloodProducts"
-                   Placeholder="In mls">
+                   Placeholder="In mls" Completed="EntryComplete" AutomationId="3">
                     <Entry.Behaviors>
                         <local:EntryValidateBehaviour/>
                     </Entry.Behaviors>
@@ -57,7 +56,7 @@
                 <Label Text="Colloids Transfused in last the 48 hours" FontSize="Medium" FontAttributes="Bold" TextColor="Black"/>
                 <Label Text="FFP / Plasma:" FontAttributes="Italic"/>
                 <Entry x:Name="FPPPlasma"
-                   Placeholder="In mls">
+                   Placeholder="In mls" Completed="EntryComplete" AutomationId="4">
                     <Entry.Behaviors>
                         <local:EntryValidateBehaviour/>
                     </Entry.Behaviors>
@@ -65,7 +64,7 @@
                 
                 <Label Text="Platelets:" FontAttributes="Italic"/>
                 <Entry x:Name="Platelets"
-                   Placeholder="In mls">
+                   Placeholder="In mls" Completed="EntryComplete" AutomationId="5">
                     <Entry.Behaviors>
                         <local:EntryValidateBehaviour/>
                     </Entry.Behaviors>
@@ -73,7 +72,7 @@
                 
                 <Label Text="Cryoprecipitate:" FontAttributes="Italic"/>
                 <Entry x:Name="Cryoprecipitate"
-                   Placeholder="In mls">
+                   Placeholder="In mls" Completed="EntryComplete" AutomationId="6">
                     <Entry.Behaviors>
                         <local:EntryValidateBehaviour/>
                     </Entry.Behaviors>
@@ -81,7 +80,7 @@
                 
                 <Label Text="Albumin 4%:" FontAttributes="Italic"/>
                 <Entry x:Name="Albumin4"
-                   Placeholder="In mls">
+                   Placeholder="In mls" Completed="EntryComplete" AutomationId="7">
                     <Entry.Behaviors>
                         <local:EntryValidateBehaviour/>
                     </Entry.Behaviors>
@@ -89,7 +88,7 @@
                 
                 <Label Text="Albumin 5%:" FontAttributes="Italic"/>
                 <Entry x:Name="Albumin5"
-                   Placeholder="In mls">
+                   Placeholder="In mls" Completed="EntryComplete" AutomationId="8">
                     <Entry.Behaviors>
                         <local:EntryValidateBehaviour/>
                     </Entry.Behaviors>
@@ -97,7 +96,7 @@
                 
                 <Label Text="Albumin 20%:" FontAttributes="Italic"/>
                 <Entry x:Name="Albumin20"
-                   Placeholder="In mls">
+                   Placeholder="In mls" Completed="EntryComplete" AutomationId="9">
                     <Entry.Behaviors>
                         <local:EntryValidateBehaviour/>
                     </Entry.Behaviors>
@@ -105,7 +104,7 @@
                 
                 <Label Text="Dextran:" FontAttributes="Italic"/>
                 <Entry x:Name="Dextran"
-                   Placeholder="In mls">
+                   Placeholder="In mls" Completed="EntryComplete" AutomationId="10">
                     <Entry.Behaviors>
                         <local:EntryValidateBehaviour/>
                     </Entry.Behaviors>
@@ -113,7 +112,7 @@
                 
                 <Label Text="Other Colloids:" FontAttributes="Italic"/>
                 <Entry x:Name="OtherColloids"
-                   Placeholder="In mls">
+                   Placeholder="In mls" Completed="EntryComplete" AutomationId="11">
                     <Entry.Behaviors>
                         <local:EntryValidateBehaviour/>
                     </Entry.Behaviors>
@@ -124,7 +123,7 @@
                 <Label Text="Crystalloids Transfused in the last hour" FontSize="Medium" FontAttributes="Bold" TextColor="Black"/>
                 <Label Text="0.9% NaCl:" FontAttributes="Italic"/>
                 <Entry x:Name="NaCl"
-                   Placeholder="In mls">
+                   Placeholder="In mls" Completed="EntryComplete" AutomationId="12">
                     <Entry.Behaviors>
                         <local:EntryValidateBehaviour/>
                     </Entry.Behaviors>
@@ -132,7 +131,7 @@
                 
                 <Label Text="0.45 NS:" FontAttributes="Italic"/>
                 <Entry x:Name="NS"
-                   Placeholder="In mls">
+                   Placeholder="In mls" Completed="EntryComplete" AutomationId="13">
                     <Entry.Behaviors>
                         <local:EntryValidateBehaviour/>
                     </Entry.Behaviors>
@@ -140,7 +139,7 @@
                 
                 <Label Text="Hartmann's Solution:" FontAttributes="Italic"/>
                 <Entry x:Name="HartmannsSolution"
-                   Placeholder="In mls">
+                   Placeholder="In mls" Completed="EntryComplete" AutomationId="14">
                     <Entry.Behaviors>
                         <local:EntryValidateBehaviour/>
                     </Entry.Behaviors>
@@ -148,7 +147,7 @@
                 
                 <Label Text="4% Dextrose and 1/5:" FontAttributes="Italic"/>
                 <Entry x:Name="Dextrose"
-                   Placeholder="In mls">
+                   Placeholder="In mls" Completed="EntryComplete" AutomationId="15">
                     <Entry.Behaviors>
                         <local:EntryValidateBehaviour/>
                     </Entry.Behaviors>
@@ -156,7 +155,7 @@
                 
                 <Label Text="Other Crystaloids:" FontAttributes="Italic"/>
                 <Entry x:Name="OtherCrystalloids"
-                   Placeholder="In mls">
+                   Placeholder="In mls" Completed="EntryComplete" AutomationId="16">
                     <Entry.Behaviors>
                         <local:EntryValidateBehaviour/>
                     </Entry.Behaviors>

@@ -16,23 +16,29 @@ namespace CalculatorTest
 		{
 			InitializeComponent ();
 		}
-        private void ReturnToMain(object sender, EventArgs e) {
-            App.Current.MainPage = new MainPage();
-        }
 
-        private void LoginButton(object sender, EventArgs e) {
-            var Username = UserNameInput.Text;
-            var Password = PasswordInput.Text;
-            if (Username == "qwerty" && Password=="qwerty") {
-                App.Current.MainPage = new PassLogin();
-            }
-        }
-
-        protected override bool OnBackButtonPressed()
+        private void LoginButton(object sender, EventArgs e)
         {
-            App.Current.MainPage = new MainPage();
-            base.OnBackButtonPressed();
-            return true;
+            Verify();
+        }
+
+        private void PasswordComplete(object sender, EventArgs e)
+        {
+            Verify();
+        }
+
+        private void Verify()
+        {
+            var Password = PasswordInput.Text;
+
+            if (Password == App.ACCESS)
+            {
+                App.Current.MainPage = new MainPage();
+            }
+            else
+            {
+                DisplayAlert("Incorrect Password", "Incorrect Password. Access Denied.", "OK");
+            }
         }
     }
 }

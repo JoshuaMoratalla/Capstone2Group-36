@@ -6,11 +6,11 @@
         <StackLayout Margin="10">
             <Label Text="Contraindication Guidelines" 
                    VerticalOptions="Center"
-                   HorizontalOptions="CenterAndExpand"
+                   HorizontalOptions="Center"
                    FontSize="Large"
                    FontAttributes="Bold"
                    TextColor="Black"/>
-            <SearchBar x:Name="searchbar" Placeholder="Search..." TextChanged="SearchBar_TextChanged"/>
+            <SearchBar x:Name="searchbar" Placeholder="Search..." TextChanged="SearchBar_TextChanged" HeightRequest="40"/>
             <ListView x:Name="listview" HasUnevenRows="True" ItemSelected="Listview_ItemSelected" >
                     <ListView.ItemTemplate >
                     <DataTemplate>

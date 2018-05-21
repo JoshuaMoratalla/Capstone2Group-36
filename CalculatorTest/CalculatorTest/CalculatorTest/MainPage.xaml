@@ -18,10 +18,6 @@
                 VerticalOptions="Center"
                 HorizontalOptions="Center"
                 Clicked="ToDatabase"/>
-        <Button Text="Login Page"
-                VerticalOptions="Center"
-                HorizontalOptions="Center"
-                Clicked="ToLogin"/>
         <Button Text="Contact Us"
                 VerticalOptions="Center"
                 HorizontalOptions="Center"

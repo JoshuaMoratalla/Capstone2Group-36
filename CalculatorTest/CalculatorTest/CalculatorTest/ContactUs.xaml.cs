@@ -24,6 +24,11 @@ namespace CalculatorTest
             return true;
         }
 
+        private void OpenURL(object sender, EventArgs e)
+        {
+            Device.OpenUri(new Uri("mailto:info@ebaanz.org"));
+        }
+
         private void ReturnToMain(object sender, EventArgs e)
         {
             App.Current.MainPage = new MainPage();

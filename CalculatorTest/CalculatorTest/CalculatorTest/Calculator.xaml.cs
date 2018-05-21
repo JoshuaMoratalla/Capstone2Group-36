@@ -59,12 +59,12 @@ namespace CalculatorTest
                 if (ColloidsDouble + CrystalDouble < TPV &&
                     BloodDouble + ColloidsDouble + CrystalDouble < TBV)
                 {
-                    Output.Text = "Sample qualifies.";
+                    Output.Text = "Sample Qualifies";
                     Output.BackgroundColor = Color.FromHex("#00853E");
                 }
                 else
                 {
-                    Output.Text = "Sample does not qualify";
+                    Output.Text = "Sample Does Not Qualify";
                     Output.BackgroundColor = Color.FromHex("#ED3125");
                 }
             }
@@ -94,6 +94,70 @@ namespace CalculatorTest
         {
             App.Current.MainPage = new MainPage();
         }
+
+        private void EntryComplete(object sender, EventArgs e)
+        {
+            FocusEntry(((Entry)sender).AutomationId);
+        }
+
+        private void FocusEntry(string ID)
+        {
+            switch (ID)
+            {
+                case "0":
+                    WholeBlood.Focus();
+                    break;
+                case "1":
+                    PackedCells.Focus();
+                    break;
+                case "2":
+                    OtherBloodProducts.Focus();
+                    break;
+                case "3":
+                    FPPPlasma.Focus();
+                    break;
+                case "4":
+                    Platelets.Focus();
+                    break;
+                case "5":
+                    Cryoprecipitate.Focus();
+                    break;
+                case "6":
+                    Albumin4.Focus();
+                    break;
+                case "7":
+                    Albumin5.Focus();
+                    break;
+                case "8":
+                    Albumin20.Focus();
+                    break;
+                case "9":
+                    Dextran.Focus();
+                    break;
+                case "10":
+                    OtherColloids.Focus();
+                    break;
+                case "11":
+                    NaCl.Focus();
+                    break;
+                case "12":
+                    NS.Focus();
+                    break;
+                case "13":
+                    HartmannsSolution.Focus();
+                    break;
+                case "14":
+                    Dextrose.Focus();
+                    break;
+                case "15":
+                    OtherCrystalloids.Focus();
+                    break;
+                case "16":
+                default:
+                    break;
+            }
+        }
+
     }
 
     public class EntryValidateBehaviour : Behavior<Entry>

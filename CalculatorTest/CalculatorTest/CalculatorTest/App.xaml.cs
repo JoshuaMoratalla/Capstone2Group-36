@@ -25,6 +25,8 @@ namespace CalculatorTest
             public string ActionColor { get; set; }
         }
 
+        public static string ACCESS;
+
         public App()//Default App load. Doesnt set excel sheet.
         {
             InitializeComponent();
@@ -32,11 +34,19 @@ namespace CalculatorTest
             MainPage = new CalculatorTest.MainPage();
         }
 
-        public App(string Excelstring)//New App load. Grabs string from Android/iOS
+        public App(string Excelstring, string Access)//New App load. Grabs string from Android/iOS
         {
             InitializeComponent();
-
-            MainPage = new CalculatorTest.MainPage();
+            
+            if (Access != "")
+            {
+                MainPage = new CalculatorTest.MainPage();
+            }
+            else
+            {
+                MainPage = new CalculatorTest.Login();
+                ACCESS = Access;
+            }
 
             #region Excel Processing
             if (Excelstring != "")

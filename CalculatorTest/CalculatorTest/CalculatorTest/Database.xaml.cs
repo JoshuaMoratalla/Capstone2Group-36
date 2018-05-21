@@ -14,7 +14,7 @@ namespace CalculatorTest
 	{
 		public Database ()
 		{
-			InitializeComponent ();
+			InitializeComponent();
             listview.ItemsSource = App.ExcelSheetFinal;
         }
 

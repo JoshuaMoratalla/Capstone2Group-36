@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 
 using Foundation;
@@ -20,8 +21,11 @@ namespace CalculatorTest.iOS {
         //
         public override bool FinishedLaunching(UIApplication app, NSDictionary options) {
             global::Xamarin.Forms.Forms.Init();
-            LoadApplication(new App());
 
+            //var documentsPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
+            //var filePath = Path.Combine(documentsPath, "Conditions.xlsx");
+
+            LoadApplication(new App());
             return base.FinishedLaunching(app, options);
         }
     }
