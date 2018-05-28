@@ -5,8 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Access.txt" />
     <None Remove="App.xaml" />
     <None Remove="Calculator.xaml" />
+    <None Remove="ConditionsExcel.xlsx" />
     <None Remove="ContactUs.xaml" />
     <None Remove="Database.xaml" />
     <None Remove="Login.xaml" />
@@ -14,12 +16,14 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="Access.txt" />
     <EmbeddedResource Include="App.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="Calculator.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="ConditionsExcel.xlsx" />
     <EmbeddedResource Include="ContactUs.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>

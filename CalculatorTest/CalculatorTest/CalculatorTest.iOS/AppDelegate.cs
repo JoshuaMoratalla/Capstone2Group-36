@@ -22,9 +22,6 @@ namespace CalculatorTest.iOS {
         public override bool FinishedLaunching(UIApplication app, NSDictionary options) {
             global::Xamarin.Forms.Forms.Init();
 
-            //var documentsPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
-            //var filePath = Path.Combine(documentsPath, "Conditions.xlsx");
-
             LoadApplication(new App());
             return base.FinishedLaunching(app, options);
         }

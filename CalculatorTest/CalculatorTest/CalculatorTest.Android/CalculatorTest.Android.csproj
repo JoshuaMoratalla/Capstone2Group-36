@@ -142,7 +142,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidAsset Include="Assets\ConditionsExcel.xlsx" />
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
@@ -171,9 +170,6 @@
       <Project>{332c8be0-88ef-4a00-8dce-211ae5a46029}</Project>
       <Name>CalculatorTest</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Access.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

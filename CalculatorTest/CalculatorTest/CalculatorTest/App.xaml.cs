@@ -2,6 +2,7 @@
 using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using ExcelDataReader;
 using Xamarin.Forms;
@@ -27,17 +28,30 @@ namespace CalculatorTest
 
         public static string ACCESS;
 
-        public App()//Default App load. Doesnt set excel sheet.
+        public App()
         {
             InitializeComponent();
 
-            MainPage = new CalculatorTest.MainPage();
-        }
+            string Excelstring = "";
+            string Access = "";
 
-        public App(string Excelstring, string Access)//New App load. Grabs string from Android/iOS
-        {
-            InitializeComponent();
-            
+            var assembly = IntrospectionExtensions.GetTypeInfo(typeof(App)).Assembly;
+            using (Stream stream = assembly.GetManifestResourceStream("CalculatorTest.ConditionsExcel.xlsx"))
+            {
+                using (var reader = new System.IO.StreamReader(stream))
+                {
+                    Excelstring = reader.ReadToEnd();
+                }
+            }
+
+            using (Stream stream = assembly.GetManifestResourceStream("CalculatorTest.Access.txt"))
+            {
+                using (var reader = new System.IO.StreamReader(stream))
+                {
+                    Access = reader.ReadToEnd();
+                }
+            }
+
             if (Access != "")
             {
                 MainPage = new CalculatorTest.MainPage();
@@ -49,42 +63,35 @@ namespace CalculatorTest
             }
 
             #region Excel Processing
-            if (Excelstring != "")
+            using (Stream testing = assembly.GetManifestResourceStream("CalculatorTest.ConditionsExcel.xlsx"))//Stream generated
             {
-                using (Stream testing = GenerateStreamFromString(Excelstring))//Stream generated
+                using (var reader = ExcelReaderFactory.CreateReader(testing))//Excelread
                 {
-                    using (var reader = ExcelReaderFactory.CreateOpenXmlReader(testing))//Excelread
+                    var ExcelSheet = new ObservableCollection<Condition>();//Builds Collection
+                    do
                     {
-                        var ExcelSheet = new ObservableCollection<Condition>();//Builds Collection
-                        do
+                        int IDvar = -1;
+                        while (reader.Read())
                         {
-                            int IDvar = -1;
-                            while (reader.Read())
+                            IDvar++;
+                            Condition ConditionLine = new Condition
                             {
-                                IDvar++;
-                                Condition ConditionLine = new Condition
-                                {
-                                    ID = IDvar,
-                                    Name = Trimwhitespaces(reader.GetString(0)),
-                                    Explanation = Trimwhitespaces(reader.GetString(1)),
-                                    Action = Trimwhitespaces(reader.GetString(2)),
-                                    Commonlyknownas = Trimwhitespaces(reader.GetString(3)),
-                                    Abbreviations = Trimwhitespaces(reader.GetString(4)),
-                                    Seealso = Trimwhitespaces(reader.GetString(5)),
-                                    ActionColor = SetColour(Trimwhitespaces(reader.GetString(6)))
-                                };
+                                ID = IDvar,
+                                Name = Trimwhitespaces(reader.GetString(0)),
+                                Explanation = Trimwhitespaces(reader.GetString(1)),
+                                Action = Trimwhitespaces(reader.GetString(2)),
+                                Commonlyknownas = Trimwhitespaces(reader.GetString(3)),
+                                Abbreviations = Trimwhitespaces(reader.GetString(4)),
+                                Seealso = Trimwhitespaces(reader.GetString(5)),
+                                ActionColor = SetColour(Trimwhitespaces(reader.GetString(6)))
+                            };
 
-                                ExcelSheet.Add(ConditionLine);
-                            }
-                        } while (reader.NextResult());
+                            ExcelSheet.Add(ConditionLine);
+                        }
+                    } while (reader.NextResult());
 
-                        ExcelSheetFinal = ExcelSheet;
-                    }
+                    ExcelSheetFinal = ExcelSheet;
                 }
-            }
-            else
-            {
-                throw new System.ArgumentException("Excel File did not load Correctly");//TESTING_JASON
             }
             #endregion
         }
@@ -124,15 +131,6 @@ namespace CalculatorTest
             }
 
             return output;
-        }
-        //Converts the string to a strem
-        public static Stream GenerateStreamFromString(string s)
-        {
-            // convert string to stream
-            byte[] byteArray = Encoding.GetEncoding(1252).GetBytes(s);
-            //byte[] byteArray = Encoding.ASCII.GetBytes(contents);
-            MemoryStream stream = new MemoryStream(byteArray);
-            return stream;
         }
 
         protected override void OnStart()
