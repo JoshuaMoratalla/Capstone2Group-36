@@ -165,10 +165,12 @@
                    Text="" TextColor="Black"/>
 
                 <!--Buttons-->
-                <Button x:FieldModifier="CalculateButton" 
+                <Button x:Name="CalculateButton"
+                    x:FieldModifier="CalculateButton"                      
                     Text="Calculate" 
                     Clicked="Button_Clicked"/>
-                <Button
+                <Button x:Name="ReturnButton"
+                    x:FieldModifier="ReturnButton"   
                     Text="Return to Main"
                     Clicked="ReturnToMain"/>
 

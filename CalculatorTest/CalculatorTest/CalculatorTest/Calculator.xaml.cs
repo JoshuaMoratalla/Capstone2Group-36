@@ -154,6 +154,8 @@ namespace CalculatorTest
                     OtherCrystalloids.Focus();
                     break;
                 case "16":
+                    ReturnButton.Focus();                    
+                    break;
                 default:
                     break;
             }
