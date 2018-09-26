@@ -11,7 +11,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>CalculatorTest.Droid</RootNamespace>
-    <AssemblyName>CalculatorTest.Android</AssemblyName>
+    <AssemblyName>EBAANZAPP.Android</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <AndroidApplication>true</AndroidApplication>
     <AndroidResgenFile>Resources\Resource.Designer.cs</AndroidResgenFile>

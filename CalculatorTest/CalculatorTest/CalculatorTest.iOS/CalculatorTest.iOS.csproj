@@ -11,7 +11,7 @@
     <OutputType>Exe</OutputType>
     <RootNamespace>CalculatorTest.iOS</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
-    <AssemblyName>CalculatorTest.iOS</AssemblyName>
+    <AssemblyName>EBAANZAPP.iOS</AssemblyName>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
   </PropertyGroup>
